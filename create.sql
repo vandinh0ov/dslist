@@ -1,0 +1,10 @@
+create table tb_belonging (position integer, game_id bigint not null, list_id bigint not null, primary key (game_id, list_id)) engine=InnoDB;
+create table tb_game (game_year integer, score float(53), id bigint not null auto_increment, genre varchar(255), img_url varchar(255), long_description TEXT, platforms varchar(255), short_description TEXT, title varchar(255), primary key (id)) engine=InnoDB;
+create table tb_game_list (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=InnoDB;
+alter table tb_belonging add constraint FKrchwdikeu66uky1hf75ym1kh foreign key (list_id) references tb_game_list (id);
+alter table tb_belonging add constraint FK2slybclee7wdfxhfltbvqkgpg foreign key (game_id) references tb_game (id);
+create table tb_belonging (position integer, game_id bigint not null, list_id bigint not null, primary key (game_id, list_id)) engine=InnoDB;
+create table tb_game (game_year integer, score float(53), id bigint not null auto_increment, genre varchar(255), img_url varchar(255), long_description TEXT, platforms varchar(255), short_description TEXT, title varchar(255), primary key (id)) engine=InnoDB;
+create table tb_game_list (id bigint not null auto_increment, name varchar(255), primary key (id)) engine=InnoDB;
+alter table tb_belonging add constraint FKrchwdikeu66uky1hf75ym1kh foreign key (list_id) references tb_game_list (id);
+alter table tb_belonging add constraint FK2slybclee7wdfxhfltbvqkgpg foreign key (game_id) references tb_game (id);
